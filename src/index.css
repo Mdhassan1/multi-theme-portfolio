@@ -1,0 +1,245 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
+
+  body {
+    margin: 0;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--sec-accent-ink, #5271FF);
+    outline-offset: 3px;
+  }
+}
+
+/* ============================================================================
+   SECTION-SPECIFIC COLOUR SYSTEMS (7 DISTINCT VISUAL ENVIRONMENTS + BRIDGE)
+   ============================================================================ */
+
+/* 1. HERO — 3D DIGITAL EXPERIENCE (Midnight Navy / Electric Blue / Cyan) */
+.theme-hero {
+  --sec-bg: #080D1C;
+  --sec-surface: #0F172F;
+  --sec-surface-alt: #162244;
+  --sec-surface-hover: #1A2850;
+  --sec-primary: #5271FF;
+  --sec-primary-fg: #F7F9FF;
+  --sec-accent: #43E5FF;
+  --sec-accent-ink: #43E5FF;
+  --sec-accent-fg: #080D1C;
+  --sec-secondary: #5271FF;
+  --sec-text: #F7F9FF;
+  --sec-text-secondary: #D4DCF2;
+  --sec-text-muted: #98A7CD;
+  --sec-border: rgba(82, 113, 255, 0.25);
+  --sec-border-strong: rgba(67, 229, 255, 0.5);
+  --sec-grid: rgba(82, 113, 255, 0.085);
+  --sec-numeral: rgba(67, 229, 255, 0.16);
+  color-scheme: dark;
+}
+
+/* 2. ABOUT — SWISS EDITORIAL (Warm Ivory / Charcoal / Burnt Orange / Stone Grey) */
+.theme-about {
+  --sec-bg: #F2EFE7;
+  --sec-surface: #EAE5DA;
+  --sec-surface-alt: #E2DDD0;
+  --sec-surface-hover: #DFD8CA;
+  --sec-primary: #20211F;
+  --sec-primary-fg: #F2EFE7;
+  --sec-accent: #C66B45;
+  --sec-accent-ink: #A04B28;
+  --sec-accent-fg: #F2EFE7;
+  --sec-secondary: #85847C;
+  --sec-text: #20211F;
+  --sec-text-secondary: #363733;
+  --sec-text-muted: #5C5B54;
+  --sec-border: rgba(32, 33, 31, 0.15);
+  --sec-border-strong: rgba(32, 33, 31, 0.36);
+  --sec-grid: rgba(133, 132, 124, 0.08);
+  --sec-numeral: rgba(32, 33, 31, 0.15);
+  color-scheme: light;
+}
+
+/* 3. SKILLS — BENTO ART GRID (Soft Lavender / Deep Violet / Bright Lime / Pale Lilac) */
+.theme-skills {
+  --sec-bg: #EAE6F5;
+  --sec-surface: #F7F5FC;
+  --sec-surface-alt: #D8CFF0;
+  --sec-surface-hover: #E1DAF5;
+  --sec-primary: #6046A5;
+  --sec-primary-fg: #FFFFFF;
+  --sec-accent: #C6F36A;
+  --sec-accent-ink: #6046A5;
+  --sec-accent-fg: #252033;
+  --sec-secondary: #D8CFF0;
+  --sec-text: #252033;
+  --sec-text-secondary: #3B3452;
+  --sec-text-muted: #584E73;
+  --sec-border: rgba(96, 70, 165, 0.2);
+  --sec-border-strong: rgba(96, 70, 165, 0.45);
+  --sec-grid: rgba(96, 70, 165, 0.065);
+  --sec-numeral: rgba(96, 70, 165, 0.18);
+  color-scheme: light;
+}
+
+/* 4. PROJECTS — MODERN MAGAZINE (Warm Cream / Deep Forest Green / Vivid Coral / Muted Sage) */
+.theme-projects {
+  --sec-bg: #F7F3EA;
+  --sec-surface: #FFFFFF;
+  --sec-surface-alt: #ECE6D8;
+  --sec-surface-hover: #E8E1D2;
+  --sec-primary: #193D32;
+  --sec-primary-fg: #F7F3EA;
+  --sec-accent: #F07861;
+  --sec-accent-ink: #B3402A;
+  --sec-accent-fg: #1F1411;
+  --sec-secondary: #A9BBA8;
+  --sec-text: #20251F;
+  --sec-text-secondary: #343C33;
+  --sec-text-muted: #505B4F;
+  --sec-border: rgba(25, 61, 50, 0.16);
+  --sec-border-strong: rgba(25, 61, 50, 0.38);
+  --sec-grid: rgba(25, 61, 50, 0.06);
+  --sec-numeral: rgba(25, 61, 50, 0.18);
+  color-scheme: light;
+}
+
+/* 5. EXPERIENCE — SWISS EDITORIAL (Pale Cool Grey / Dark Navy / Copper / Slate) */
+.theme-experience {
+  --sec-bg: #E9EDF0;
+  --sec-surface: #F4F7F9;
+  --sec-surface-alt: #DCE3E8;
+  --sec-surface-hover: #E0E6EB;
+  --sec-primary: #192B3D;
+  --sec-primary-fg: #F4F7F9;
+  --sec-accent: #C17B51;
+  --sec-accent-ink: #93532E;
+  --sec-accent-fg: #FFFFFF;
+  --sec-secondary: #748493;
+  --sec-text: #192B3D;
+  --sec-text-secondary: #2B3F52;
+  --sec-text-muted: #4A5B6B;
+  --sec-border: rgba(25, 43, 61, 0.15);
+  --sec-border-strong: rgba(25, 43, 61, 0.36);
+  --sec-grid: rgba(116, 132, 147, 0.09);
+  --sec-numeral: rgba(25, 43, 61, 0.16);
+  color-scheme: light;
+}
+
+/* 6. ACHIEVEMENTS — BENTO ART GRID (Warm Pale Yellow / Dark Brown / Bright Orange / Muted Golden) */
+.theme-achievements {
+  --sec-bg: #FFF0C2;
+  --sec-surface: #FFF8E5;
+  --sec-surface-alt: #F6DF98;
+  --sec-surface-hover: #FCEBBD;
+  --sec-primary: #47351F;
+  --sec-primary-fg: #FFF8E5;
+  --sec-accent: #F28B35;
+  --sec-accent-ink: #A64E08;
+  --sec-accent-fg: #47351F;
+  --sec-secondary: #D9B76C;
+  --sec-text: #47351F;
+  --sec-text-secondary: #5A4429;
+  --sec-text-muted: #6C5335;
+  --sec-border: rgba(71, 53, 31, 0.18);
+  --sec-border-strong: rgba(71, 53, 31, 0.4);
+  --sec-grid: rgba(71, 53, 31, 0.06);
+  --sec-numeral: rgba(71, 53, 31, 0.2);
+  color-scheme: light;
+}
+
+/* EDITORIAL BRIDGE — EDUCATION (Warm Sand / Espresso Umber / Burnished Gold) */
+.theme-education {
+  --sec-bg: #F5F2EB;
+  --sec-surface: #FCFBF7;
+  --sec-surface-alt: #EAE4D7;
+  --sec-surface-hover: #EFEAE0;
+  --sec-primary: #302820;
+  --sec-primary-fg: #FCFBF7;
+  --sec-accent: #C78A38;
+  --sec-accent-ink: #8E5913;
+  --sec-accent-fg: #1F1914;
+  --sec-secondary: #9C9283;
+  --sec-text: #221E1A;
+  --sec-text-secondary: #3D362F;
+  --sec-text-muted: #61584E;
+  --sec-border: rgba(48, 40, 32, 0.15);
+  --sec-border-strong: rgba(48, 40, 32, 0.35);
+  --sec-grid: rgba(48, 40, 32, 0.055);
+  --sec-numeral: rgba(48, 40, 32, 0.16);
+  color-scheme: light;
+}
+
+/* 7. CONTACT — CREATIVE BRUTALIST (Near-Black / Electric Yellow / Vivid Pink / Grey) */
+.theme-contact {
+  --sec-bg: #171717;
+  --sec-surface: #212121;
+  --sec-surface-alt: #2A2A2A;
+  --sec-surface-hover: #2E2E2E;
+  --sec-primary: #E7FF38;
+  --sec-primary-fg: #171717;
+  --sec-accent: #FF5B91;
+  --sec-accent-ink: #FF5B91;
+  --sec-accent-fg: #171717;
+  --sec-secondary: #A4A4A4;
+  --sec-text: #FFFFFF;
+  --sec-text-secondary: #E2E2E2;
+  --sec-text-muted: #A4A4A4;
+  --sec-border: rgba(255, 255, 255, 0.16);
+  --sec-border-strong: rgba(255, 255, 255, 0.38);
+  --sec-grid: rgba(255, 255, 255, 0.05);
+  --sec-numeral: rgba(231, 255, 56, 0.2);
+  color-scheme: dark;
+}
+
+/* Subtle section-aware architectural grid pattern */
+.sec-grid-bg {
+  background-image:
+    linear-gradient(to right, var(--sec-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--sec-grid) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@keyframes grid-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(64px, 64px, 0);
+  }
+}
+
+.sec-grid-animated {
+  animation: grid-drift 28s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .sec-grid-animated {
+    animation: none !important;
+    transform: none !important;
+  }
+}
