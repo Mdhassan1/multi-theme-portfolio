@@ -26,7 +26,7 @@ const SECTION_THEME_CLASS: Record<SectionSeoKey, string> = {
 };
 
 const SECTION_THEME_COLOR: Record<SectionSeoKey, string> = {
-  home: '#080D1C',
+  home: '#140E10',
   about: '#F2EFE7',
   skills: '#EAE6F5',
   projects: '#F7F3EA',
@@ -75,7 +75,7 @@ export default function App() {
   }, []);
 
   const activeThemeClass = SECTION_THEME_CLASS[activeSeoSection] ?? 'theme-hero';
-  const activeThemeColor = SECTION_THEME_COLOR[activeSeoSection] ?? '#080D1C';
+  const activeThemeColor = SECTION_THEME_COLOR[activeSeoSection] ?? '#140E10';
 
   return (
     <HelmetProvider>
@@ -87,7 +87,7 @@ export default function App() {
           {/* Skip Navigation Link for Accessibility */}
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-[#43E5FF] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-[#080D1C]"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-[#F2B872] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-[#140E10]"
           >
             Skip to main content
           </a>

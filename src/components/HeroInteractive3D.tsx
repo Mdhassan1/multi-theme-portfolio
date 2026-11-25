@@ -69,10 +69,10 @@ function createMonogramTexture(): THREE.CanvasTexture {
   canvas.height = 512;
   const ctx = canvas.getContext('2d');
   if (ctx) {
-    ctx.fillStyle = '#0D152C';
+    ctx.fillStyle = '#181113';
     ctx.fillRect(0, 0, 512, 512);
 
-    ctx.strokeStyle = 'rgba(82, 113, 255, 0.16)';
+    ctx.strokeStyle = 'rgba(242, 184, 114, 0.16)';
     ctx.lineWidth = 2;
     for (let i = 0; i <= 512; i += 64) {
       ctx.beginPath();
@@ -85,17 +85,17 @@ function createMonogramTexture(): THREE.CanvasTexture {
       ctx.stroke();
     }
 
-    ctx.strokeStyle = '#43E5FF';
+    ctx.strokeStyle = '#FF6B4A';
     ctx.lineWidth = 8;
     ctx.strokeRect(32, 32, 448, 448);
 
-    ctx.fillStyle = '#F7F9FF';
+    ctx.fillStyle = '#F7F1EB';
     ctx.font = '800 184px Archivo, sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText('AR', 256, 236);
 
-    ctx.fillStyle = '#43E5FF';
+    ctx.fillStyle = '#F2B872';
     ctx.font = '600 26px "JetBrains Mono", monospace';
     ctx.fillText('DEV / BUILDER', 256, 368);
   }
@@ -112,28 +112,28 @@ function createUiScreenTexture(variant: 'web' | 'mobile'): THREE.CanvasTexture {
   if (ctx) {
     const w = canvas.width;
     const h = canvas.height;
-    ctx.fillStyle = '#091024';
+    ctx.fillStyle = '#150F11';
     ctx.fillRect(0, 0, w, h);
 
-    ctx.fillStyle = '#43E5FF';
+    ctx.fillStyle = '#FF6B4A';
     ctx.fillRect(18, 22, w - 36, 14);
 
-    ctx.fillStyle = 'rgba(82, 113, 255, 0.28)';
+    ctx.fillStyle = 'rgba(242, 184, 114, 0.28)';
     ctx.fillRect(18, 54, w - 36, 56);
     ctx.fillRect(18, 124, (w - 48) / 2, 64);
     ctx.fillRect(18 + (w - 48) / 2 + 12, 124, (w - 48) / 2, 64);
 
     if (variant === 'mobile') {
-      ctx.fillStyle = 'rgba(67, 229, 255, 0.32)';
+      ctx.fillStyle = 'rgba(255, 107, 74, 0.34)';
       ctx.fillRect(18, 206, w - 36, 72);
-      ctx.fillStyle = 'rgba(247, 249, 255, 0.14)';
+      ctx.fillStyle = 'rgba(247, 241, 235, 0.14)';
       ctx.fillRect(18, 294, w - 36, 48);
     } else {
-      ctx.fillStyle = 'rgba(67, 229, 255, 0.34)';
+      ctx.fillStyle = 'rgba(255, 107, 74, 0.36)';
       ctx.fillRect(18, 202, w - 36, 32);
     }
 
-    ctx.strokeStyle = 'rgba(82, 113, 255, 0.55)';
+    ctx.strokeStyle = 'rgba(242, 184, 114, 0.55)';
     ctx.lineWidth = 4;
     ctx.strokeRect(2, 2, w - 4, h - 4);
   }
@@ -149,9 +149,9 @@ function createContactShadowTexture(): THREE.CanvasTexture {
   const ctx = canvas.getContext('2d');
   if (ctx) {
     const grad = ctx.createRadialGradient(128, 128, 10, 128, 128, 120);
-    grad.addColorStop(0, 'rgba(3, 6, 18, 0.65)');
-    grad.addColorStop(0.55, 'rgba(82, 113, 255, 0.14)');
-    grad.addColorStop(1, 'rgba(8, 13, 28, 0)');
+    grad.addColorStop(0, 'rgba(10, 6, 7, 0.68)');
+    grad.addColorStop(0.55, 'rgba(255, 107, 74, 0.14)');
+    grad.addColorStop(1, 'rgba(20, 14, 16, 0)');
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, 256, 256);
   }
@@ -225,11 +225,11 @@ export default function HeroInteractive3D() {
     scene.environment = envTarget.texture;
     pmrem.dispose();
 
-    // Futuristic Midnight Navy + Electric Blue + Cyan Studio Lighting
-    const hemiLight = new THREE.HemisphereLight(0xdce7ff, 0x0b122b, 1.0);
+    // Warm Smoked Oxblood + Signal Vermilion + Champagne Gold Studio Lighting
+    const hemiLight = new THREE.HemisphereLight(0xf7efe6, 0x1a1114, 1.0);
     scene.add(hemiLight);
 
-    const keyLight = new THREE.DirectionalLight(0xf7f9ff, 2.2);
+    const keyLight = new THREE.DirectionalLight(0xfff6ed, 2.2);
     keyLight.position.set(5, 7, 5);
     keyLight.castShadow = !isSoftwareGl;
     keyLight.shadow.mapSize.set(1024, 1024);
@@ -243,13 +243,13 @@ export default function HeroInteractive3D() {
     keyLight.shadow.normalBias = 0.02;
     scene.add(keyLight);
 
-    const cyanRimLight = new THREE.DirectionalLight(0x43e5ff, 1.65);
-    cyanRimLight.position.set(-5, 3, -4);
-    scene.add(cyanRimLight);
+    const vermilionRimLight = new THREE.DirectionalLight(0xff6b4a, 1.6);
+    vermilionRimLight.position.set(-5, 3, -4);
+    scene.add(vermilionRimLight);
 
-    const blueFillLight = new THREE.DirectionalLight(0x5271ff, 1.15);
-    blueFillLight.position.set(3, -3, -3);
-    scene.add(blueFillLight);
+    const brassFillLight = new THREE.DirectionalLight(0xf2b872, 1.15);
+    brassFillLight.position.set(3, -3, -3);
+    scene.add(brassFillLight);
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableZoom = false;
@@ -293,27 +293,27 @@ export default function HeroInteractive3D() {
     textures.push(monogramTex, webTex, mobileTex, shadowTex, envTarget.texture);
 
     const chassisMat = new THREE.MeshStandardMaterial({
-      color: 0x111a38,
-      metalness: 0.78,
-      roughness: 0.26,
+      color: 0x22171a,
+      metalness: 0.72,
+      roughness: 0.28,
     });
     const trimMat = new THREE.MeshStandardMaterial({
-      color: 0x5271ff,
-      metalness: 0.75,
+      color: 0xd4a36a,
+      metalness: 0.78,
       roughness: 0.22,
     });
     const cyanAccentMat = new THREE.MeshStandardMaterial({
-      color: 0x43e5ff,
-      emissive: 0x43e5ff,
-      emissiveIntensity: 0.45,
+      color: 0xff6b4a,
+      emissive: 0xff6b4a,
+      emissiveIntensity: 0.4,
       metalness: 0.25,
-      roughness: 0.2,
+      roughness: 0.22,
     });
     const conduitMat = new THREE.MeshStandardMaterial({
-      color: 0x5271ff,
-      emissive: 0x43e5ff,
-      emissiveIntensity: 0.35,
-      metalness: 0.55,
+      color: 0xd4a36a,
+      emissive: 0xff6b4a,
+      emissiveIntensity: 0.28,
+      metalness: 0.58,
       roughness: 0.3,
     });
     const coreFaceMat = new THREE.MeshStandardMaterial({

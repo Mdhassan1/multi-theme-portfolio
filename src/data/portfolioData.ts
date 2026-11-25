@@ -140,7 +140,7 @@ export const TECH_ITEMS: TechItem[] = [
     categoryId: "tools",
     categoryLabel: "Tools",
     contextNote: "Version control and collaborative development workflows.",
-    bentoSpan: "sm:col-span-2 lg:col-span-2 lg:row-span-1",
+    bentoSpan: "sm:col-span-1 lg:col-span-2 lg:row-span-1",
     motif: "github",
   },
   {

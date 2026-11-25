@@ -26,7 +26,7 @@ export default function HeroSection({
       id="home"
       className="theme-hero relative flex min-h-screen flex-col justify-between overflow-hidden bg-[var(--sec-bg)] text-[var(--sec-text)] border-b border-[var(--sec-border)] pt-24 pb-8 sm:pt-28 lg:pt-32"
     >
-      {/* Futuristic Midnight Navy Technical Grid */}
+      {/* Smoked Oxblood Technical Grid */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -36,7 +36,7 @@ export default function HeroSection({
           className="absolute -top-40 right-0 h-[520px] w-[520px] rounded-full opacity-25 blur-3xl"
           style={{
             background:
-              'radial-gradient(circle, rgba(82,113,255,0.45) 0%, rgba(67,229,255,0.12) 45%, transparent 72%)',
+              'radial-gradient(circle, rgba(255,107,74,0.38) 0%, rgba(242,184,114,0.14) 45%, transparent 72%)',
           }}
         />
       </div>
@@ -95,7 +95,7 @@ export default function HeroSection({
             <button
               type="button"
               onClick={scrollToProjects}
-              className="inline-flex min-h-[46px] items-center gap-2.5 border border-[var(--sec-accent)] bg-[var(--sec-primary)] px-6 py-3 text-sm font-semibold text-[var(--sec-primary-fg)] transition-colors duration-150 hover:bg-[var(--sec-accent)] hover:text-[var(--sec-accent-fg)] whitespace-nowrap shrink-0 cursor-pointer"
+              className="inline-flex min-h-[46px] items-center gap-2.5 border border-[var(--sec-accent-ink)] bg-[var(--sec-primary)] px-6 py-3 text-sm font-semibold text-[var(--sec-primary-fg)] transition-colors duration-150 hover:bg-[var(--sec-accent-ink)] hover:text-[var(--sec-accent-fg)] whitespace-nowrap shrink-0 cursor-pointer"
             >
               <span>Explore My Work</span>
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

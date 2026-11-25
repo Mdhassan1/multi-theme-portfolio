@@ -26,7 +26,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--sec-accent-ink, #5271FF);
+    outline: 2px solid var(--sec-accent-ink, #F2B872);
     outline-offset: 3px;
   }
 }
@@ -35,25 +35,25 @@
    SECTION-SPECIFIC COLOUR SYSTEMS (7 DISTINCT VISUAL ENVIRONMENTS + BRIDGE)
    ============================================================================ */
 
-/* 1. HERO — 3D DIGITAL EXPERIENCE (Midnight Navy / Electric Blue / Cyan) */
+/* 1. HERO — 3D DIGITAL EXPERIENCE (Smoked Oxblood / Signal Vermilion / Champagne Gold) */
 .theme-hero {
-  --sec-bg: #080D1C;
-  --sec-surface: #0F172F;
-  --sec-surface-alt: #162244;
-  --sec-surface-hover: #1A2850;
-  --sec-primary: #5271FF;
-  --sec-primary-fg: #F7F9FF;
-  --sec-accent: #43E5FF;
-  --sec-accent-ink: #43E5FF;
-  --sec-accent-fg: #080D1C;
-  --sec-secondary: #5271FF;
-  --sec-text: #F7F9FF;
-  --sec-text-secondary: #D4DCF2;
-  --sec-text-muted: #98A7CD;
-  --sec-border: rgba(82, 113, 255, 0.25);
-  --sec-border-strong: rgba(67, 229, 255, 0.5);
-  --sec-grid: rgba(82, 113, 255, 0.085);
-  --sec-numeral: rgba(67, 229, 255, 0.16);
+  --sec-bg: #140E10;
+  --sec-surface: #1F1619;
+  --sec-surface-alt: #2B1F23;
+  --sec-surface-hover: #34262B;
+  --sec-primary: #FF6B4A;
+  --sec-primary-fg: #140E10;
+  --sec-accent: #FF6B4A;
+  --sec-accent-ink: #F2B872;
+  --sec-accent-fg: #140E10;
+  --sec-secondary: #D4A36A;
+  --sec-text: #F7F1EB;
+  --sec-text-secondary: #E0D4CC;
+  --sec-text-muted: #B5A39D;
+  --sec-border: rgba(242, 184, 114, 0.22);
+  --sec-border-strong: rgba(255, 107, 74, 0.52);
+  --sec-grid: rgba(242, 184, 114, 0.075);
+  --sec-numeral: rgba(255, 107, 74, 0.18);
   color-scheme: dark;
 }
 

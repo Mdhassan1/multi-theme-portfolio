@@ -184,7 +184,7 @@ export default function ExpertiseSection({
         <div
           className={`mt-14 grid gap-4 ${
             activeCategory === 'all'
-              ? 'sm:grid-cols-2 lg:grid-cols-6 lg:auto-rows-[168px]'
+              ? 'sm:grid-cols-2 lg:grid-cols-6 lg:auto-rows-[minmax(208px,auto)]'
               : 'sm:grid-cols-2 lg:grid-cols-3'
           }`}
         >
@@ -209,7 +209,9 @@ export default function ExpertiseSection({
                   delay: index * 0.04,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className={`group relative flex flex-col justify-between overflow-hidden border p-6 sm:p-7 transition-colors duration-200 ${
+                className={`group relative flex flex-col justify-between overflow-hidden border transition-colors duration-200 ${
+                  isHeroTile || isTallTile ? 'p-6 sm:p-7' : 'p-5 sm:p-6'
+                } ${
                   activeCategory === 'all' ? tool.bentoSpan : 'min-h-[190px]'
                 } ${
                   isHeroTile
@@ -230,7 +232,7 @@ export default function ExpertiseSection({
                   </span>
                   <span
                     aria-hidden="true"
-                    className={`h-2.5 w-2.5 border transition-colors duration-150 ${
+                    className={`h-2.5 w-2.5 shrink-0 border transition-colors duration-150 ${
                       isHeroTile
                         ? 'border-[var(--sec-accent)] bg-[var(--sec-accent)]'
                         : 'border-[var(--sec-primary)]/40 bg-transparent group-hover:bg-[var(--sec-accent)] group-hover:border-[var(--sec-text)]'
@@ -241,7 +243,7 @@ export default function ExpertiseSection({
                 {/* Middle/Right Custom Artwork Motif */}
                 <div
                   className={`flex items-center ${
-                    isHeroTile || isTallTile ? 'my-auto justify-center py-4' : 'my-3 justify-end'
+                    isHeroTile || isTallTile ? 'my-auto justify-center py-4' : 'my-2 justify-end'
                   }`}
                 >
                   <BentoArtMotif motif={tool.motif} isDarkSurface={isHeroTile} />
